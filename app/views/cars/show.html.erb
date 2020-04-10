@@ -1,0 +1,14 @@
+<h1>Show Car</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @car.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @car.text %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@car) %> |
+<%= link_to 'Back', cars_path %>
