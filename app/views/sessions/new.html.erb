@@ -9,7 +9,7 @@
     <div class="p-2 flex-fill"></div>
     <div class="p-2 flex-fill">
       <div class="card px-4 py-3 bg-light mb-5">
-        <%= form_with(url: "/login", method: "post", do %>
+        <%= form_with(url: "/login", method: "post") do %>
           <div class="form-group">
             <%= label_tag(:username, "Username") %>
             <%= text_field_tag(:username, nil, class: "form-control") %>
