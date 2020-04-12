@@ -2,7 +2,6 @@ class CarsController < ApplicationController
   before_action :confirm_logged_in, except: [:index, :show, :search]
 
   def search
-    @car = Car.new
   end
 
   def index
