@@ -1,39 +1,49 @@
-<h1>Show Car</h1>
+<%= render 'shared/nav-top' %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @car.price %>
-</p>
+<div class="d-flex bd-highlight justify-content-center">
+  <div class="p-2 flex-fill"></div>
+  <div class="p-2 flex-fill">
+    <div class="card border-dark my-5">
+      <span class="big-icon bg-secondary card-img-top text-center">
+        <i class="fa fa-car"></i>
+      </span>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <strong>Price:</strong>
+          <%= number_to_currency(@car.price) %>
+        </li>
+        <li class="list-group-item">
+          <strong>New:</strong>
+          <%= @car.new %>
+        </li>
+        <li class="list-group-item">
+          <strong>Year:</strong>
+          <%= @car.year %>
+        </li>
+        <li class="list-group-item">
+          <strong>Maker:</strong>
+          <%= @car.maker %>
+        </li>
+        <li class="list-group-item">
+          <strong>Color:</strong>
+          <%= @car.color %>
+        </li>
+        <li class="list-group-item">
+          <strong>Model:</strong>
+          <%= @car.model %>
+        </li>
+        <li class="list-group-item">
+          <strong>Mileage:</strong>
+          <%= number_with_delimiter(@car.mileage) %>
+        </li>
+      </ul>
+      <div class="card-body mx-auto">
+        <%= link_to 'Edit', edit_car_path(@car), class: "btn btn-primary" %>
+        <%= link_to 'Index', cars_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+  <div class="p-2 flex-fill bd-highlight"></div>
+</div>
 
-<p>
-  <strong>New:</strong>
-  <%= @car.new %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @car.year %>
-</p>
-
-<p>
-  <strong>Maker:</strong>
-  <%= @car.maker %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @car.color %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @car.model %>
-</p>
-
-<p>
-  <strong>Mileage:</strong>
-  <%= @car.mileage %>
-</p>
-
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
+<%= render 'shared/nav-bottom' %>
