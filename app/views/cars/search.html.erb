@@ -2,8 +2,56 @@
 
 <div class="mx-5 mt-4">
   <h2 class="text-center">Search for Cars</h2>
-  <%= render 'form' %>
-  <%= link_to 'Back', cars_path %>
+
+  <div class="mx-5 mt-4">
+    <div class="d-flex bd-highlight justify-content-center">
+      <div class="p-2 flex-fill"></div>
+      <div class="p-2 flex-fill">
+        <div class="card px-4 py-3 bg-light mb-5">
+          <%= form_with(url: cars_path, method: "get", local: true ) do %>
+            <div class="form-group">
+              <%= label_tag(:price, "Price") %>
+              <%= text_field_tag(:price, nil, class: "form-control") %>
+            </div>
+            <div class="form-check">
+              <div class="form-group">
+                <%= radio_button_tag(:new, 'true', :checked => true, class: "form-check-input") %>
+                <%= label_tag(:new, 'New Car', class: "form-check-label") %>
+              </div>
+            </div>
+            <div class="form-check">
+              <div class="form-group">
+                <%= radio_button_tag(:new, 'false', class: "form-check-input") %>
+                <%= label_tag(:new, 'Used Car', class: "form-check-label") %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= label_tag(:year, "Year") %>
+              <%= text_field_tag(:year, nil, class: "form-control") %>
+            </div>
+            <div class="form-group">
+              <%= label_tag(:model, "Model") %>
+              <%= text_field_tag(:model, nil, class: "form-control") %>
+            </div>
+            <div class="form-group">
+              <%= label_tag(:color, "Color") %>
+              <%= text_field_tag(:color, nil, class: "form-control") %>
+            </div>
+            <div class="form-group">
+              <%= label_tag(:maker, "Maker") %>
+              <%= text_field_tag(:maker, nil, class: "form-control") %>
+            </div>
+            <div class="form-group">
+              <%= label_tag(:mileage, "Mileage") %>
+              <%= text_field_tag(:mileage, nil, class: "form-control") %>
+            </div>
+            <%= submit_tag("Submit", class: "btn btn-primary") %>
+          <% end %>
+        </div>
+      </div>
+      <div class="p-2 flex-fill bd-highlight"></div>
+    </div>
+  </div>
 </div>
 
 <%= render 'shared/nav-bottom' %>
