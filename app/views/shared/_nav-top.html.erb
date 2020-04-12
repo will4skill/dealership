@@ -1,0 +1,8 @@
+<nav class="navbar navbar-dark bg-primary">
+  <%= link_to 'Car Dealer', cars_path, class: "navbar-brand" %>
+  <% if session[:username] == 'Admin' %>
+    <%= link_to 'Sign Out', logout_path, class: "nav-link text-right text-white" %>
+  <% else %>
+    <%= link_to 'Sign In', login_path, class: "nav-link text-right text-white" %>
+  <% end %>
+</nav>
